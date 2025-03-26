@@ -1,24 +1,10 @@
 import React from "react";
-import Sidebar from "../components/Sidebar";
 import ProfileCard from "../components/ProfileCard";
 import SearchBar from "../components/SearchBar";
-import JobCard from "../components/JobCard";
+import JobList from "../components/JobList";
+import Sidebar from "../components/Sidebar";
+import Header from "../components/Header";
 
-
-
-// Job List Component
-const JobList = ({ jobs, title }) => {
-  return (
-    <div>
-      <h2 className="font-semibold mb-2">{title}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {jobs.map((job, index) => (
-          <JobCard key={index} job={job} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
 
 // Main Layout Component
@@ -30,14 +16,17 @@ const MainLayout = () => {
   ];
 
   return (
+    <>    
+    <Header/>
     <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-      {/* <ProfileCard/> */}
-      <Sidebar />
+      <ProfileCard/>
       <div className="col-span-2">
         <SearchBar />
         <JobList jobs={jobs} title="Featured Jobs" />
       </div>
     </div>
+    </>
+
   );
 };
 
