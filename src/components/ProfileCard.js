@@ -6,7 +6,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 const ProfileCard = () => {
   return (
     <div>
-      <div className="max-w-sm  bg-white rounded-xl overflow-hidden">
+      <div className="max-w-sm bg-white rounded-xl overflow-hidden">
         <div className="relative">
           <img
             src={Bgprofile}
