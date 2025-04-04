@@ -1,44 +1,64 @@
-import React from 'react'
-import profile from '../imges/Oval.png'
-import Bgprofile from '../imges/Rbg.png'
-
+import React from "react";
+import profile from "../imges/Oval.png";
+import Bgprofile from "../imges/Rbg.png";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const ProfileCard = () => {
-    return (
-      <div className="bg-white rounded-xl shadow-md p-4 text-center">
+  return (
+    <div>
+      <div className="max-w-sm  bg-white rounded-xl overflow-hidden">
         <div className="relative">
           <img
             src={Bgprofile}
-            alt="Cover"
-            className="w-full h-24 rounded-t-xl object-cover"
+            alt="Background"
+            className="w-full h-32 object-cover"
           />
-          <img
-            src={profile}
-            alt="Profile"
-            className="absolute left-1/2 transform -translate-x-1/2 top-1 w-25 h-25 rounded-full border-4 border-white"
-          />
-        </div>
-        <h3 className="mt-6 text-lg font-semibold">Albert Flores</h3>
-        <p className="text-sm text-gray-600">Senior Product Designer | UI/UX Designer | Graphic Designer | Web...</p>
-        <p className="text-xs text-gray-500">Clinton, Maryland</p>
-        <div className="mt-4 p-2 bg-gray-100 rounded-lg">
-          <div className="flex justify-between text-sm">
-            <span>Profile Visitors</span>
-            <span className="text-blue-600">140</span>
-          </div>
-          <div className="flex justify-between text-sm mt-1">
-            <span>Resume Viewers</span>
-            <span className="text-blue-600">20</span>
-          </div>
-          <div className="flex justify-between text-sm mt-1">
-            <span>My Jobs</span>
-            <span className="text-blue-600">88</span>
+          <div className="absolute inset-0 flex items-center justify-center top-24">
+            <img
+              src={profile}
+              alt="Profile"
+              className="w-24 h-24 rounded-full border-1 border-white"
+            />
           </div>
         </div>
-        <div className="mt-4 text-left font-semibold text-gray-700">My Calendar</div>
-        <p className="text-sm text-blue-600">Upcoming Interviews</p>
+        <div className="text-center mt-5 p-4">
+          <h2 className="text-lg font-semibold">Albert Flores</h2>
+          <div className="flex justify-center">
+            <p className="text-sm text-black text-center w-56">
+              Senior Product Designer | UI/UX Designer | Graphic Designer |
+              Web...
+            </p>
+          </div>
+          <p className="text-sm mt-1 text-gray-500">Clinton, Maryland</p>
+        </div>
       </div>
-    );
-  };
 
-export default ProfileCard
+      <div className="max-w-sm bg-white rounded-xl overflow-hidden mt-3  px-8">
+        <div className="flex justify-between py-4 text-sm border-b border-gray-300">
+          <div className="text-black">Profile Visitors</div>
+          <div className="text-[#0154AA]">140</div>
+        </div>
+        <div className="flex justify-between py-4 text-sm border-b border-gray-300">
+          <div className="text-black">Resume Viewers</div>
+          <div className="text-[#0154AA]">20</div>
+        </div>
+        <div className="flex justify-between py-4 text-sm">
+          <div className="text-black">My Jobs</div>
+          <div className="text-[#0154AA]">88</div>
+        </div>
+      </div>
+
+      <div className="max-w-sm bg-white rounded-xl overflow-hidden mt-3 p-4 px-8 flex justify-between items-center">
+        <div>
+          <div className="text-black font-bold text-lg">My calendar</div>
+          <span className="block text-[#737A91] text-md">
+            Upcoming Interviews
+          </span>
+        </div>
+        <ChevronDownIcon className="w-5 h-5 text-gray-500" />
+      </div>
+    </div>
+  );
+};
+
+export default ProfileCard;
